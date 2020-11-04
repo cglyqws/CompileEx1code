@@ -8,7 +8,7 @@ char stack2[500];
 int top1,top2;
 int tempint;
 int i;
-int priority[105][105];
+int priority[106][106];
 void initpriority()
 {
 	//1 > -1 < -2 Пе 2 =   
