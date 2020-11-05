@@ -67,7 +67,7 @@ int main (int argc, char *argv[])
 		{
 			if (!top) topchar = '#';
 			else topchar = stack[top-1];
-			if (stmp[i]==0)
+			if (stmp[i]=='\r'||stmp[i] =='\n'||stmp[i]==0)
 			{
 				stmp[i] = '#';
 			}
@@ -143,11 +143,12 @@ int main (int argc, char *argv[])
 		top = 0;
 	}
 //	scanf("%s",stmp);
+
 //	for (i=0;;i++)
 //		{
 //			if (!top) topchar = '#';
 //			else topchar = stack[top-1];
-//			if (stmp[i]==0)
+//			if (stmp[i]=='\r'||stmp[i] ='\n'||stmp[i]==0)
 //			{
 //				stmp[i] = '#';
 //			}
@@ -191,6 +192,7 @@ int main (int argc, char *argv[])
 //						else if (topchar == ')')
 //						{
 //							top-=2;
+//							L--;
 //							printf("R\n");
 //						}
 //						if (!top) topchar = '#';
@@ -210,6 +212,9 @@ int main (int argc, char *argv[])
 //					printf("I%c\n",stmp[i]);
 //					break;
 //				case -2:
+//					printf("E\n");
+//					return 0;
+//				case 0:	
 //					printf("E\n");
 //					return 0;
 //			}
