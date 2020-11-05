@@ -48,7 +48,7 @@ void initpriority()
 	priority['#']['i'] = -1;
 	priority['#']['('] = -1;
 	priority['#'][')'] = -1;
-	priority['#']['#'] = 0;
+	priority['#']['#'] = -3;
 	
 	priority[')']['#'] = 1;
 	priority['i']['#'] = 1;
@@ -109,9 +109,8 @@ int main (int argc, char *argv[])
 					stack[top++] = stmp[i];
 					printf("I%c\n",stmp[i]);
 					break;
-				case 0:
-					return 0;
-					
+				case -3:
+					return 0;					
 				case -1:
 					stack[top++] = stmp[i];
 					printf("I%c\n",stmp[i]);
@@ -119,7 +118,9 @@ int main (int argc, char *argv[])
 				case -2:
 					printf("E\n");
 					return 0;
-				 
+				case 0:
+				 	printf("E\n");
+					return 0;
 			}
 		}
 		memset(stmp, 0, sizeof(stmp));
