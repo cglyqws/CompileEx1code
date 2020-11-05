@@ -59,8 +59,7 @@ int main (int argc, char *argv[])
 {
 	initpriority();
 	
-	FILE *in = fopen(argv[1],"rt");
-	
+	FILE *in = fopen(argv[1],"rt");	
 	while  (fgets(stmp,1000,in))
 	{
 		for (i=0;;i++)
@@ -118,9 +117,6 @@ int main (int argc, char *argv[])
 				case -2:
 					printf("E\n");
 					return 0;
-				case 0:
-				 	printf("E\n");
-					return 0;
 			}
 		}
 		memset(stmp, 0, sizeof(stmp));
@@ -174,9 +170,8 @@ int main (int argc, char *argv[])
 //					stack[top++] = stmp[i];
 //					printf("I%c\n",stmp[i]);
 //					break;
-//				case 0:
-//					return 0;
-//					
+//				case -3:
+//					return 0;					
 //				case -1:
 //					stack[top++] = stmp[i];
 //					printf("I%c\n",stmp[i]);
@@ -184,7 +179,6 @@ int main (int argc, char *argv[])
 //				case -2:
 //					printf("E\n");
 //					return 0;
-//				 
 //			}
 //		}
 	
