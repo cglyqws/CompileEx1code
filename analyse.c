@@ -8,6 +8,7 @@ char stackn[1006];
 char topchar,topn;
 int top;
 int tempint;
+int L;
 int i;
 int priority[110][110];
 void initpriority()
@@ -78,12 +79,25 @@ int main (int argc, char *argv[])
 						if (topchar == 'i')
 						{
 							top--;
-							topn++;
+							stackn[topn++] = 'F';
 							printf("R\n");
 						}
-						else if (topchar == '+'||topchar == '*')
+						else if (topchar == '+')
 						{
-							if (topn>1)
+							if (topn+L+1-top>1)
+							{
+								topn--;
+								top--;
+								printf("R\n");
+							}
+							else {
+								printf("RE\n");
+								return 0;
+							}
+						}
+						else if (topchar == '*')
+						{
+							if (topn+L+1-top>1)
 							{
 								topn--;
 								top--;
@@ -112,6 +126,7 @@ int main (int argc, char *argv[])
 					return 0;					
 				case -1:
 					stack[top++] = stmp[i];
+					if (stmp[i]=='(') L++;
 					printf("I%c\n",stmp[i]);
 					break;
 				case -2:
@@ -140,12 +155,25 @@ int main (int argc, char *argv[])
 //						if (topchar == 'i')
 //						{
 //							top--;
-//							topn++;
+//							stackn[topn++] = 'F';
 //							printf("R\n");
 //						}
-//						else if (topchar == '+'||topchar == '*')
+//						else if (topchar == '+')
 //						{
-//							if (topn>1)
+//							if (topn+L+1-top>1)
+//							{
+//								topn--;
+//								top--;
+//								printf("R\n");
+//							}
+//							else {
+//								printf("RE\n");
+//								return 0;
+//							}
+//						}
+//						else if (topchar == '*')
+//						{
+//							if (topn+L+1-top>1)
 //							{
 //								topn--;
 //								top--;
@@ -174,6 +202,7 @@ int main (int argc, char *argv[])
 //					return 0;					
 //				case -1:
 //					stack[top++] = stmp[i];
+//					if (stmp[i]=='(') L++;
 //					printf("I%c\n",stmp[i]);
 //					break;
 //				case -2:
