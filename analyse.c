@@ -111,6 +111,7 @@ int main (int argc, char *argv[])
 						else if (topchar == ')')
 						{
 							top-=2;
+							L--;
 							printf("R\n");
 						}
 						if (!top) topchar = '#';
