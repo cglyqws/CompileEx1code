@@ -133,6 +133,9 @@ int main (int argc, char *argv[])
 				case -2:
 					printf("E\n");
 					return 0;
+				case 0:	
+					printf("E\n");
+					return 0;
 			}
 		}
 		memset(stmp, 0, sizeof(stmp));
